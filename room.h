@@ -1,4 +1,4 @@
-class BattleFiled{
+class Room{
     private:
     int south;
     int north;
@@ -6,6 +6,5 @@ class BattleFiled{
     int west;
 
     public:
-        
-
+    
 };

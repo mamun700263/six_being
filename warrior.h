@@ -9,27 +9,42 @@ class Warrior {
 private:
     string name;
     string gender;
-    int health_capasity;
     int age;
+    int brain;
+    int health_capasity;
+
     int health;
+    int attack;
     int respect;
     int defence;
-    int attack;
-    int brain;
     int control;
 
 public:
-    Warrior(string name,string gender, int age,int health_capasity, int health, int respect,
+    Warrior(string name, string gender, int age, int health_capasity, int health, int respect,
             int defence, int attack, int brain, int control);
     ~Warrior();
 
-    string getName()  const { return name; }
-    int getHealth()    { return health; }
-    int getAttack()   const { return attack; }
-    int getDefence()  const { return defence; }
+    // Getters
+    string getName()          const { return name; }
+    int getHealth()           const { return health; }
+    int getHealthCapasity()   const { return health_capasity; }
+    int getAttack()           const { return attack; }
+    int getDefence()          const { return defence; }
+    int getRespect()          const { return respect; }
+    int getControl()          const { return control; }
+    int getBrain()            const { return brain; }
+
+    // Take & receive
     void receiveHeal(int health_points);
     void takeDamage(int points);
-    int getHealth() const { return health; }
+
+    // Stat upgrades from prizes
+    void upgradeAttack(int points);
+    void upgradeDefence(int points);
+    void addRespect(int points);
+    void addControl(int points);
+    void upgradeBrain(int points);
+
     void displayStats() const;
 };
 

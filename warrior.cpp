@@ -64,6 +64,7 @@ void Warrior::upgradeBrain(int points){
     brain += points;
     cout << name << "'s brain increased by " << points << "! Brain: " << brain << endl;
 }
+
 void Warrior::displayStats() const {
     cout << "──────────────────────────" << endl;
     cout << "⚔️  Name   : " << name    << endl;

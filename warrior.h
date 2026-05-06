@@ -44,7 +44,6 @@ public:
     void addRespect(int points);
     void addControl(int points);
     void upgradeBrain(int points);
-
     void displayStats() const;
 };
 

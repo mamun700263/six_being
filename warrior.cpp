@@ -4,7 +4,7 @@
 Warrior::Warrior(string name,string gender,int health_capasity, int age, int health, int respect,
                  int defence, int attack, int brain, int control)
     : name(name),gender(gender), age(age), health(health), respect(respect),
-      defence(defence), attack(attack), brain(brain), control(control)
+      defence(defence), attack(attack), brain(brain), control(control),health_capasity(health_capasity)
 {
     cout << "⚔️  Warrior " << this->name << " has entered the arena!" << endl;
 }
@@ -13,21 +13,9 @@ Warrior::~Warrior() {
     cout << "💀 Warrior " << name << " has fallen!" << endl;
 }
 
-void Warrior::receiveHeal(int health_points) {
-    if (health_points <= 0) {
-        cout << "❌ Invalid heal amount!" << endl;
-        return;
-    }
-    health += health_points;
-    if (health > health_capasity) health = health_capasity;
-    cout << "💚 " << name << " healed to " << health << " HP!" << endl;
-}
 
-void Warrior::takeDamage(int health_points) {
-    health -= health_points;
-    if (health < 0) health = 0;
-    cout << "💔 " << name << " dropped to " << health << " HP!" << endl;
-}
+
+
 void Warrior::receiveHeal(int health_points){
     health += health_points;
     if(health > health_capasity) health = health_capasity; // cant exceed max
@@ -36,7 +24,10 @@ void Warrior::receiveHeal(int health_points){
 
 void Warrior::takeDamage(int points){
     health -= points;
-    if(health < 0) health = 0; // cant go below 0
+    if(health < 0){
+        health = 0;
+        Warrior::~Warrior();
+    }
     cout << name << " took " << points << " damage! HP: " << health << "/" << health_capasity << endl;
 }
 

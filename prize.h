@@ -30,5 +30,12 @@ class Prize{
     void getControl()      ;
     void getHealerHealth() ;
     
+    void applyHealthTo(Warrior& target);
+    void applyAttackTo(Warrior& target);
+    void applyDefenceTo(Warrior& target);
+    void applyRespectTo(Warrior& target);
+    void applyControlTo(Warrior& target);
+
+    
 };
 #endif

@@ -37,12 +37,31 @@ void Prize::Heal(Warrior& target, int health_points){
          << " now has " << target.getHealth() << " HP!" << endl;
 }
 
-int Prize::getHealth()       { return health; }
-int Prize::getAttack()       { return attack; }
-int Prize::getDefence()      { return defence; }
-int Prize::getRespect()      { return respect; }
-int Prize::getControl()      { return control; }
-int Prize::getHealerHealth() { return healer_health; }
+// prize.cpp
+void Prize::applyHealthTo(Warrior& target){
+    if(health <= 0){ cout << "❌ No health in this prize!" << endl; return; }
+    target.receiveHeal(health);
+}
+
+void Prize::applyAttackTo(Warrior& target){
+    if(attack <= 0){ cout << "❌ No attack in this prize!" << endl; return; }
+    target.upgradeAttack(attack);
+}
+
+void Prize::applyDefenceTo(Warrior& target){
+    if(defence <= 0){ cout << "❌ No defence in this prize!" << endl; return; }
+    target.upgradeDefence(defence);
+}
+
+void Prize::applyRespectTo(Warrior& target){
+    if(respect <= 0){ cout << "❌ No respect in this prize!" << endl; return; }
+    target.addRespect(respect);
+}
+
+void Prize::applyControlTo(Warrior& target){
+    if(control <= 0){ cout << "❌ No control in this prize!" << endl; return; }
+    target.addControl(control);
+}
 
 void Prize::displayPrize(){
     cout << "===== Prize =====" << endl;

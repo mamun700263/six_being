@@ -4,7 +4,7 @@
 #include <chrono>
 using namespace std;
 
-void slowPrint(const string& text, int delay = 40) {
+void slowPrint(const string& text, int delay = 01) {
     for (char c : text) {
         cout << c << flush;
         this_thread::sleep_for(chrono::milliseconds(delay));
@@ -107,6 +107,7 @@ int main() {
     Warrior player(player_name, gender_type, age, 100, 100, 90, 85, 95, 70, 80);
 
     cout << endl;
+
     slowPrint("🔮 And your guardian healer appears from the shadows...");
     this_thread::sleep_for(chrono::milliseconds(800));
 

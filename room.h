@@ -2,6 +2,8 @@
 #define ROOM_H
 #include <iostream>
 #include <string>
+#include "prize.h"
+
 using namespace std;
 class Room{
     private:
@@ -11,6 +13,7 @@ class Room{
     int west;
     int row;
     int column;
+    Prize chest;
 
     //enimies
     //puzzle
@@ -19,7 +22,7 @@ class Room{
     
 
     public:
-    Room(int south=0, int north=0, int east=0, int west=0,int row=0,int column=0);
+    Room(Prize chest,int south=0, int north=0, int east=0, int west=0,int row=0,int column=0);
     ~Room();
     void display_direction();
     

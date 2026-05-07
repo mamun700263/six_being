@@ -37,7 +37,6 @@ void Prize::Heal(Warrior& target, int health_points){
          << " now has " << target.getHealth() << " HP!" << endl;
 }
 
-// prize.cpp
 void Prize::applyHealthTo(Warrior& target){
     if(health <= 0){ cout << "❌ No health in this prize!" << endl; return; }
     target.receiveHeal(health);

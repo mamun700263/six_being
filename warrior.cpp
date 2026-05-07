@@ -22,7 +22,7 @@ void Warrior::receiveHeal(int health_points){
     cout << name << " healed! HP: " << health << "/" << health_capasity << endl;
 }
 
-void Warrior::takeDamage(int points){
+void Warrior::take_damage(int points){
     health -= points;
     if(health < 0){
         health = 0;

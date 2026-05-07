@@ -33,10 +33,11 @@ public:
     int getRespect()          const { return respect; }
     int getControl()          const { return control; }
     int getBrain()            const { return brain; }
+    bool is_alive()           const {return health>0;}
 
     // Take & receive
     void receiveHeal(int health_points);
-    void takeDamage(int points);
+    void take_damage(int points);
 
     // Stat upgrades from prizes
     void upgradeAttack(int points);
